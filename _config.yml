@@ -1,0 +1,34 @@
+name: 
+author: 
+url: https://kisalli-dev.github.io
+baseurl: 
+resume_site: 
+description: 
+github_username: 
+github: https://github.com/kisalli-dev/ 
+plugins: [jekyll-paginate]
+paginate: 12
+paginate_path: "/page/:num/"
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+facebook: https://www.facebook.com/groups/899303056853769/
+highlighter: rouge
+markdown: kramdown
+kramdown: 
+  toc_levels: "2,3" 
+comments :
+  gitalk :
+    clientID : 
+    clientSecret : 
+    repo : 
+    owner : 
+    admin : 
+collections:
+  maa7:
+    order: chapter
+    output: true
+    permalink: /:collection/:name
+  maa8:
+    order: chapter
+    output: true
+    permalink: /:collection/:name
+collections_dir: modules  

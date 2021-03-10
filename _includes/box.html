@@ -1,0 +1,37 @@
+<div class="{{include.type}} box" id="{{include.id}}">
+{% if include.type == "theorem" or include.type == "definition"%}
+	<h3 class="box-header">
+	{% if include.type == "theorem" %}
+		<span class="box-number">Lause {% if page.chapter %}{{ page.chapter }}.{% endif %}</span>: 
+	{% elsif include.type == "definition" %}
+		<span class="box-number">Määritelmä {% if page.chapter %}{{ page.chapter }}.{% endif %}</span>: 
+	{% endif %}
+	{{include.header}}
+	</h3> 
+{% else %}
+	<button type="button" class="collapsible box-button">
+	{% if include.type == "exercise" %}
+		<span class="exercise-number">Tehtävä {% if page.chapter %}{{ page.chapter }}.{% endif %}</span>: 
+	{% endif %}
+	{{include.header}}</button>
+{% endif %}
+{% if include.content %}
+<div class="box-content">
+<div markdown="1">  
+{{include.content}}
+</div>  
+{% endif %}
+{% if include.dropdown %}
+<button type="button" class="collapsible box-dropdown-button">
+{% if include.type == "exercise" %}
+Vastaus
+{% elsif include.type == "theorem" %}
+Todistus
+{% endif %}
+</button>
+<div class="box-dropdown-content" markdown="1">
+{{include.dropdown}} 
+</div>
+{% endif %}
+</div>
+</div>
